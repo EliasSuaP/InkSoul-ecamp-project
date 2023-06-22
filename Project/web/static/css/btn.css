@@ -1,0 +1,23 @@
+/* botón volver arriba */
+.volverArribaBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.765);
+    color: rgb(254, 53, 207);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    width: 50px;
+}
+
+.volverArribaBtn:hover {
+    opacity: 1;
+}

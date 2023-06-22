@@ -1,0 +1,45 @@
+@import url("btn.css");
+@import url("galeria.css");
+@import url("media_querys.css");
+@import url("footer.css");
+@import url("tarjeta_gracias.css");
+@import url("form.css");
+
+/* body{
+    background-color: ;
+}
+ */
+
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bg-img{ /* Imágen de fondo header */
+    background-image: url(../img/tatuaje_studio.jpg);
+    background-size: cover;
+    height: 90vh;
+}
+.img-logo{
+    width: 50px;
+}
+/* IMG HOME template */
+.img-cuerpo{
+    width: 400px;
+    height: 350px;
+}
+
+
+/* gALERIA DE TATUAJES */
+.cont-img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Mapa de ubicacion en template Reserva */
+.map{
+    width: 400px;
+    height: 400px;
+}
+ 
+.img-tatuador{
+    max-height: 240px;
+}

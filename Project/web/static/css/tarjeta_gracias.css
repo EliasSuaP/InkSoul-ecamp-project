@@ -1,0 +1,7 @@
+/* Personalizar tarjeta */
+.bg-container {
+    background-image: url('../img/tarjeta_gracias.png');
+    background-size: contain;
+    background-position: center;
+    height: 500px; 
+}

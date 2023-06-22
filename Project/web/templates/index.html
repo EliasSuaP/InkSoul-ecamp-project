@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/d3125b2604.js" crossorigin="anonymous"></script>
+    <title>Bienvenido</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="bg-img">
+        </header>
+        {% include 'include/navbar.html' %}
+        
+        {% block content %}
+
+        {% if user.is_authenticated %}
+        <div class="alert alert-success text-center">
+            <h4 class="alert-heading">¡Bienvenido, {{ user.get_full_name }}!</h4>
+            <p class="mb-0">¡Qué bueno verte por aquí!</p>
+        </div>
+        {% endif %}
+
+        <br>
+        <br>
+        <!-- Imágen con texto inicial -->
+        <div class="container" style="height: 600px;">
+            <div class="row align-items-center">
+             <div class="col-md-6">
+                <img src="../static/img/cuerpo_tatoo.jpg" alt="Imagen" style="max-width: 100%;">
+            </div>
+             <div class="col-md-6">
+                <h2>INKSOUL STUDIO</h2>
+                <p class="text">
+                Sumérgete en la historia del tatuaje, un arte ancestral que 
+                ha dejado su huella en diversas culturas a lo largo de los 
+                siglos. Desde las antiguas civilizaciones hasta la actualidad,
+                 el tatuaje ha evolucionado en una forma de expresión personal
+                  y artística, capturando la esencia única de cada individuo. 
+                  En nuestro estudio de tatuajes, ofrecemos un ambiente seguro
+                   y acogedor, donde nuestro talentoso equipo de artistas te 
+                   ayudará a encontrar el diseño perfecto para plasmar tu 
+                   historia en la piel. Descubre el poder del tatuaje y 
+                   déjate llevar por esta fascinante forma de arte que 
+                   perdurará eternamente.
+                </p>
+                <p class="text mb-5">
+                Nuestro estudio de tatuajes te brinda la 
+                oportunidad de explorar una amplia variedad de 
+                diseños y estilos, desde minimalistas y delicados 
+                hasta intrincados y vibrantes. Nuestro equipo 
+                comprometido estará a tu lado en cada paso del 
+                camino para hacer realidad tus ideas y garantizar 
+                que tu experiencia sea excepcional. Descubre cómo 
+                el tatuaje puede ser una poderosa forma de expresión 
+                personal, permitiendo que tu historia se revele en 
+                cada trazo. ¡Ven y déjanos ser parte de tu viaje 
+                hacia un tatuaje significativo y extraordinario!
+                </p>
+             </div>
+            </div>
+
+
+        <br>
+        <br>
+        <hr>
+
+        <!-- Galería de imágenes home -->
+        <div class="main">
+            <h1 class="title"></h1>
+            <section class="container-galery">
+                <img class="image-item" src="{% static 'img/otros/tatuaje_mandala.jpg' %}" alt="tatuaje uno.">
+                <img class="image-item" src="{% static 'img/otros/tatuaje_atrapasueños.jpg' %}" alt="tatuaje dos.">
+                <img class="image-item" src="{% static 'img/otros/tatuaje_tauro.jpeg' %}" alt="tatuaje tres.">
+                <img class="image-item" src="{% static 'img/otros/tatuaje_floral.jpg' %}" alt="tatuaje cuatro">
+                <img class="image-item" src="{% static 'img/otros/tatuaje_cuello.jpg' %}" alt="tatuaje cinco">
+            </section>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+
+        <!-- Sección con los servicos que se ofrecen - Home -->
+        <h2 class="text-center mt-5 mb-5">NUESTROS SERVICIOS</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                    <i class="fa-solid fa-hand-dots fa-2xl" style="color: #fe35cf;"></i>
+                    <h5 class="card-title mt-3">Tatuajes</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                    <i class="fa-solid fa-syringe fa-2xl" style="color: #fe35cf;"></i>
+                    <h5 class="card-title mt-3">Piercing | Perforaciones</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                    <i class="fa-brands fa-uikit fa-2xl" style="color: #fe35cf;"></i>
+                    <h5 class="card-title mt-3">Kits</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+
+        {% endblock %}
+        <!-- Botón para volver arriba -->
+        <button onclick="topFunction()" id="backToTopBtn" class="volverArribaBtn" title="Volver arriba">↑</button>
+            
+        <!-- Footer -->
+        {% include 'include/footer.html' %}
+        
+        
+    </div>
+    <!-- BOOSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/btn.js' %}"></script>
+</body>
+</html>
+
+
+<!-- Sección para dar formas de contacto -->
+
+<!--           <div class="row">
+            <div class="col-md-12 text-center mb-5">
+                <h3>Cotiza tu tatuaje</h3>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <a href="#">
+                        <i class="fa-brands fa-whatsapp fa-2xl" style="color: #fe35cf;"></i>+569 123456789
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook fa-2xl" style="color: #fd35cf;"></i> InkSoul
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#">
+                        <i class="fa-brands fa-instagram fa-2xl" style="color: #fe35cf;"></i> InkSoul
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="text-center mb-5">
+            <a class="btn btn-primary" href="{% url 'Reserva' %}">Reservar!</a>
+        </div>
+ -->        

@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% block content %}
+<style>
+    .img-hover:hover img{
+        opacity: .6;
+    }
+</style>
+
+<div class="container my-5">
+    <h1 class="text-center my-5">¡Nuestro equipo es único!</h1>
+    <div class="row g-0">
+        {% for tatuador in context %}
+        <div class="col-md-4">
+            <div class="card tatuador-card">
+                <!-- Button trigger modal -->
+                <a type="button" class="img-hover rounded bg-warning" data-bs-toggle="modal" data-bs-target="#descripcionModal-{{ tatuador.id }}">
+                    <img src="{{ tatuador.url }}" class="card-img-top rounded img-tatuador" alt="{{ tatuador.nombre }}">
+                </a>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title my-2">{{ tatuador.nombre }}</h5>
+                    
+                <!-- Modal -->
+                <div class="modal fade" id="descripcionModal-{{ tatuador.id }}" tabindex="-1" aria-labelledby="descripcionModalLabel-{{ tatuador.id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content text-bg-dark">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="descripcionModalLabel-{{ tatuador.id }}">{{ tatuador.nombre }}</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{ tatuador.descripcion }}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}
+

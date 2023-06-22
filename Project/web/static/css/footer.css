@@ -1,0 +1,12 @@
+/* FOOTER */
+.container-footer{
+    background-color: #111111; 
+    color: #fe35cf;
+    display: flex; 
+    align-items: center; 
+    padding: 20px;
+    height: 30vh;
+}
+.border-s{
+    border-left: 1px solid #ADD8E6;
+}

@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <p>Your username and password didn't match. Please try again.</p>
+        </div>
+    {% endif %}
+    
+    {% if next %}
+        {% if user.is_authenticated %}
+            <div class="alert alert-danger">
+                <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                <p>Please login to see this page.</p>
+            </div>
+        {% endif %}
+    {% endif %}
+    
+    <form method="post" action="{% url 'login' %}" class="text-center mt-4 bg-dark p-4 mx-auto col-md-4 col-sm-6 rounded">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.username.id_for_label }}" class="form-label text-light">Nombre de usuario</label>
+            {{ form.username }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.password.id_for_label }}" class="form-label text-light">Contraseña</label>
+            {{ form.password }}
+        </div>
+        <button type="submit" class="btn btn-danger">Iniciar</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+            
+    <p class="text-center mt-3">
+        <a href="{% url 'password_reset' %}">Has olvidado tu contraseña?</a>
+    </p>
+{% endblock %}

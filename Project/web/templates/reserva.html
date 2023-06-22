@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+   
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto my-5 bg-form">
+    <div class="row">
+        <div class="col-md-6">
+        <h5 class="text-white">No pospongas más tu deseo de llevar un tatuaje que te inspire y represente. ¡Reserva una cita con nuestro tatuador profesional y comienza a escribir tu historia en tu piel!</h5>
+        <form class="text-left text-white mt-5" action="{% url 'Gracias' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-dark">Enviar</button>
+        </form>
+
+    </div>  
+        <div class="col-md-6 text-center my-auto">
+            <img class="img-cuerpo" src="{% static 'img/aguja_tattoo.jpg' %}" alt="tatuador sosteniendo una aguja para tatuar">
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<div class="container mx-auto my-5">
+    <div class="row">
+        <div class="col-md-6 text-end">
+            <h3>Dirección:</h3>
+            <h3>Los Guindos, Puente alto.</h3>
+            <h5>Cotiza tu tatuaje</h5>
+            <p>
+                <i class="fa-brands fa-whatsapp fa-2xl" style="color: #fe35cf;"></i>+569 123456789
+            </p>
+            <p>
+                <i class="fa-brands fa-facebook fa-2xl" style="color: #fd35cf;"></i> InkSoul
+            </p>
+            <p>
+                <i class="fa-brands fa-instagram fa-2xl" style="color: #fe35cf;"></i> InkSoul
+            </p>
+
+        </div>
+        <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.951720423921!2d-70.60791102441733!3d-33.58060277333816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d745c81e3f77%3A0x2b96a7845a8c7901!2sLos%20Guindos%2C%208150215%20Puente%20Alto%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1687106824896!5m2!1ses!2scl" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

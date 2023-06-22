@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block content %}
+ 
+ <div class="container-fluid bg-dark pt-5 pb-5">
+    <div class="row">
+        {% for img in context %}
+        <div class="col-md-4 col-lg-4 cont-img mt-3">
+            <div class="card text-bg-dark">
+            <img src="{{ img.url }}" class="card-img" alt="imágen tatuaje maoríe" width="300" height="300">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+/* MEDIA QUERYS */
+@media screen and (min-width: 1200px) {
+    .card-img{
+        height: 250px;
+    }
+    .card-body-kit{
+        height: 380px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card-img{
+        height: 250px;
+    }
+    .card-body-kit{
+        height: 480px;
+    }
+
+}
+
+
+@media screen and (max-width: 1400px) {
+    .bg-img{
+        background-size: 50%;
+        height: 35vh;
+    }
+    
+    .container-galery{
+        width: 650px;
+        height: 380px;
+    }
+    .img-tatuador{
+        max-height: 180px;
+    }
+   
+}
+
+@media screen and (max-width: 1200px) {
+    .img-cuerpo{
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .bg-img{
+        background-size: 100%;
+    }
+
+    .container-galery{
+        width: 550px;
+        height: 350px;
+    }     
+    .img-cuerpo{
+        width: 600px;
+        height: 600px;
+    }       
+}
+
+@media screen and (max-width: 768px) {
+    .bg-img{
+        height: 30vh;
+    }
+
+    /* tamaño galeria */
+    .container-galery{
+        width: 500px;
+        height: 300px;
+    }        
+    /* padding footer */
+    .pt-10{
+        padding-top: 2em;
+    }
+    /* tamaño imagen */ 
+    .img-cuerpo{
+        width: 500px;
+        height: 450px;
+    }
+    
+}
+
+@media  screen and (max-width: 576px) {
+
+    .container-galery{
+        width: 500px;
+        height: 300px;
+    }  
+    
+    .bg-img-footer{
+        height: 50vh;
+    }
+}
